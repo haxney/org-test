@@ -1,21 +1,8 @@
 * Test heading
   #+BEGIN_SRC emacs-lisp
-    (save-excursion
-      (let (actual)
-        (outline-next-visible-heading 1)
-        (search-forward "⁁")
-        (delete-char -1)
-        (fill-paragraph)
-        (org-mark-subtree)
-        (forward-line)
-        (setq actual (buffer-substring (point) (mark)))
-
-        (outline-next-visible-heading 1)
-        (search-forward "⁁")
-        (delete-char -1)
-        (org-mark-subtree)
-        (forward-line)
-        (string= actual (buffer-substring (point) (mark)))))
+    (org-test-def org-test-fill-paragraph
+      "Test filling paragraphs"
+      (fill-paragraph))
   #+END_SRC
 
 ** Before                                                            :before:
