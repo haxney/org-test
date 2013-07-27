@@ -1,0 +1,13 @@
+* =org-test=: Org-mode self-tests
+  The aim is to allow for the simple creation of tests in org-mode files.
+
+  The macro =org-test-def= will execute the body on the first headline and
+  compare the result to the second. Each headline must include a single =⁁=
+  (=u+2041=, =CARET INSERTION POINT=) where =(point)= is expected to be.
+* Background
+  Since there was a regression in [[http://permalink.gmane.org/gmane.emacs.orgmode/22705][my fix]] for =org-fill-paragraph=, I decided
+  that some more formal testing would probably be useful for Orgmode.
+
+* Roadmap
+  - Use ERT tests
+  - Allow multiple test cases for each code block
